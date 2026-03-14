@@ -1,13 +1,13 @@
 #ifndef WATCHER_HPP
 #define WATCHER_HPP
 
-#include "config.hpp"
-#include <string>
 #include <functional>
+#include <string>
 #include <atomic>
+#include "config.hpp"
 
 using FileEventHandler = std::function<void(const std::string&)>;
 
-void start_watching(const Config& config, FileEventHandler handler, std::atomic<bool>& watcher_running);
+void start_watching(const Config& config, FileEventHandler handler, std::atomic<bool>& running);
 
 #endif
